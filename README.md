@@ -37,3 +37,22 @@ then
 ```
 for i in ./*.bam; do samtools reheader temp_headers/$i-temp_head $i > reheaded_files/$i-reheaded ; done
 ```
+index reheaded files (inside reheaded_files directory
+
+```
+for i in *reheaded; do samtools index $i ; done
+```
+
+extract first 50mb of chr 7
+
+make a seperate directory inside reheaded_files directory
+
+```
+mkdir Chr7_50mb
+```
+then
+```bash
+for i in *reheaded; do samtools view -b $i "Chr7:1-50000000" > Chr7_50mb/$i-Chr7_50mb ;done
+```
+
+
