@@ -55,30 +55,34 @@ then
 ```bash
 for i in *reheaded; do samtools view -b $i "Chr7:1-50000000" > Chr7_50mb/$i-Chr7_50mb ;done
 ```
+Rename all the files to include .bam
+```bash
+for i in *reheaded; do mv $i $i.bam ; done
+```
 Create population files
 
 pop1
 ```
-F_Ghana_WZ_BJE4687_combined__sorted.bam_rg.bam-reheaded
-F_IvoryCoast_xen228_combined__sorted.bam_rg.bam-reheaded
-F_Nigeria_EUA0331_combined__sorted.bam_rg.bam-reheaded
-F_Nigeria_EUA0333_combined__sorted.bam_rg.bam-reheaded
-F_SierraLeone_AMNH17272_combined__sorted.bam_rg.bam-reheaded
-F_SierraLeone_AMNH17274_combined__sorted.bam_rg.bam-reheaded
-ROM19161__sorted.bam_rg.bam-reheaded
-XT10_WZ_no_adapt._sorted.bam_rg.bam-reheaded
-XT11_WW_trim_no_adapt_scafconcat_sorted.bam_rg.bam-reheaded
+F_Ghana_WZ_BJE4687_combined__sorted.bam_rg.bam-reheaded.bam
+F_IvoryCoast_xen228_combined__sorted.bam_rg.bam-reheaded.bam
+F_Nigeria_EUA0331_combined__sorted.bam_rg.bam-reheaded.bam
+F_Nigeria_EUA0333_combined__sorted.bam_rg.bam-reheaded.bam
+F_SierraLeone_AMNH17272_combined__sorted.bam_rg.bam-reheaded.bam
+F_SierraLeone_AMNH17274_combined__sorted.bam_rg.bam-reheaded.bam
+ROM19161__sorted.bam_rg.bam-reheaded.bam
+XT10_WZ_no_adapt._sorted.bam_rg.bam-reheaded.bam
+XT11_WW_trim_no_adapt_scafconcat_sorted.bam_rg.bam-reheaded.bam
 ```
 pop2
 ```
-M_Ghana_WY_BJE4362_combined__sorted.bam_rg.bam-reheaded
-M_Ghana_ZY_BJE4360_combined__sorted.bam_rg.bam-reheaded
-M_Nigeria_EUA0334_combined__sorted.bam_rg.bam-reheaded
-M_Nigeria_EUA0335_combined__sorted.bam_rg.bam-reheaded
-M_SierraLeone_AMNH17271_combined__sorted.bam_rg.bam-reheaded
-M_SierraLeone_AMNH17273_combined__sorted.bam_rg.bam-reheaded
-XT1_ZY_no_adapt._sorted.bam_rg.bam-reheaded
-XT7_WY_no_adapt__sorted.bam_rg.bam-reheaded
+M_Ghana_WY_BJE4362_combined__sorted.bam_rg.bam-reheaded.bam
+M_Ghana_ZY_BJE4360_combined__sorted.bam_rg.bam-reheaded.bam
+M_Nigeria_EUA0334_combined__sorted.bam_rg.bam-reheaded.bam
+M_Nigeria_EUA0335_combined__sorted.bam_rg.bam-reheaded.bam
+M_SierraLeone_AMNH17271_combined__sorted.bam_rg.bam-reheaded.bam
+M_SierraLeone_AMNH17273_combined__sorted.bam_rg.bam-reheaded.bam
+XT1_ZY_no_adapt._sorted.bam_rg.bam-reheaded.bam
+XT7_WY_no_adapt__sorted.bam_rg.bam-reheaded.bam
 ```
 cal Fst script
 
