@@ -25,7 +25,7 @@ for i in ./*.bam; do samtools view -H $i > ./temp_headers/$i-temp_head ; done
 ```
 edit the headers in temp_headers folder (this removes unessential numbers starting with ":"
 ```bash
-for i in ./temp_headers/*temp_head; do sed -r -i 's/\b(:1-217471166|:1-181034961|:1-153873357|:1-153961319|:1-164033575|:1-154486312|:1-133565930|:1-147241510|:1-91218944|:1-52432566|:1-17610)\b//g' ./temp_headers/$i-temp_head ; done
+for i in ./temp_headers/*temp_head; do sed -r -i 's/\b(:1-217471166|:1-181034961|:1-153873357|:1-153961319|:1-164033575|:1-154486312|:1-133565930|:1-147241510|:1-91218944|:1-52432566|:1-17610)\b//g' ./temp_headers/$i ; done
 ```
 then rehead the files in the directory with original files
 
