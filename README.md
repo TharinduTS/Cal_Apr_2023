@@ -142,3 +142,46 @@ realSFS fst stats here.fst.idx
 
 copy pop1 pop2 and cal_Fst.sh to the reheaded folder and run the script
 
+## Admixture
+
+#prepare files for admixture and PCA with this script
+
+```bash
+#!/bin/sh
+#SBATCH --job-name=fst
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=48:00:00
+#SBATCH --mem=512gb
+#SBATCH --output=abba.%J.out
+#SBATCH --error=abba.%J.err
+#SBATCH --account=def-ben
+
+#SBATCH --mail-user=premacht@mcmaster.ca
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-type=REQUEUE
+#SBATCH --mail-type=ALL
+
+# Load modules
+module load nixpkgs/16.09  gcc/7.3.0
+module load angsd
+module load gsl/2.5
+module load htslib
+
+angsd -GL 1 -out genolike -nThreads 10 -doGlf 2 -doMajorMinor 1 -SNP_pval 1e-6 -doMaf 1  -bam bam.filelist
+```
+
+## PCA
+you can use the prepared files from the above file as inputs here
+
+Install PCAngsd
+
+follow the guide in 
+
+http://www.popgen.dk/software/index.php/PCAngsd
+
+you may need the help in
+
+https://github.com/TharinduTS/useful_commands/blob/master/README.md#python
